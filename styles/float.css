@@ -1,0 +1,36 @@
+/* Implements Task 2: Float-Based Magazine Layout  */
+.magazine-container {
+    padding: 1rem;
+    max-width: 1000px;
+    margin: auto;
+    background: #fff;
+    overflow: hidden; /* Contains the floats */
+}
+.main-content {
+    float: left;
+    width: 65%;
+}
+.sidebar {
+    float: right;
+    width: 30%;
+}
+.article-image {
+    float: left;
+    margin: 0 15px 10px 0;
+    max-width: 250px;
+}
+
+/* Clearfix to contain floats */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive sidebar and main content [cite: 151, 152] */
+@media (max-width: 768px) {
+    .main-content, .sidebar {
+        float: none;
+        width: 100%;
+    }
+}

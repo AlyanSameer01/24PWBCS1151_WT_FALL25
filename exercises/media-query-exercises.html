@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Query Exercises</title>
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/responsive.css">
+  <style>
+    /* Extra styling just for demonstration */
+    .mq-container {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .mq-box {
+      background: var(--primary-color);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 6px;
+      margin: 1rem 0;
+      transition: all 0.3s ease;
+    }
+
+    /* Default (Mobile-first) */
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .mq-box::after {
+      content: "Mobile View (max-width: 767px)";
+      display: block;
+      font-size: 0.9rem;
+      color: #fff;
+      margin-top: 0.5rem;
+    }
+
+    /* Tablet (768px and up) */
+    @media (min-width: 768px) {
+      .mq-box {
+        background: #e67e22;
+        transform: scale(1.05);
+      }
+      .mq-box::after {
+        content: "Tablet View (min-width: 768px)";
+      }
+    }
+
+    /* Desktop (1024px and up) */
+    @media (min-width: 1024px) {
+      .mq-box {
+        background: #27ae60;
+      }
+      .mq-box::after {
+        content: "Desktop View (min-width: 1024px)";
+      }
+    }
+
+    /* Large Desktop (1200px and up) */
+    @media (min-width: 1200px) {
+      .mq-box {
+        background: #2980b9;
+      }
+      .mq-box::after {
+        content: "Large Desktop View (min-width: 1200px)";
+      }
+    }
+
+    /* Extra Large (1400px and up) */
+    @media (min-width: 1400px) {
+      .mq-box {
+        background: #8e44ad;
+      }
+      .mq-box::after {
+        content: "Extra Large Screen (min-width: 1400px)";
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Exercise 13–18: Media Queries & Responsive Design</h1>
+    <p>This page demonstrates how media queries can change styles based on device screen size.</p>
+    
+    <div class="mq-container">
+      <div class="mq-box">
+        Resize your browser window to see the color and text change at different breakpoints.
+      </div>
+    </div>
+
+    <h2>🧭 Breakpoints Used</h2>
+    <ul>
+      <li>Mobile First: Base (0–767px)</li>
+      <li>Tablet: 768px and up</li>
+      <li>Small Desktop: 1024px and up</li>
+      <li>Large Desktop: 1200px and up</li>
+      <li>Extra Large: 1400px and up</li>
+    </ul>
+
+    <p class="mt-1">Each breakpoint changes the background color and label dynamically to demonstrate responsive design principles.</p>
+  </div>
+</body>
+</html>

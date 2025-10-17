@@ -1,0 +1,53 @@
+/* Implements Exercises 7-9 and Flexbox portion of Task 7 [cite: 69, 76, 87, 184] */
+
+/* Flex container for exercises */
+.flex-container {
+    display: flex;
+    background-color: #ddd;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    min-height: 150px;
+}
+.flex-item {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+/* Holy Grail Layout with Flexbox */
+.holy-grail-flex {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.holy-grail-flex .main-content-flex {
+    display: flex;
+    flex: 1; /* Allows main content to grow and fill space */
+}
+.holy-grail-flex .main {
+    flex: 1;
+    padding: 1rem;
+    order: 2;
+}
+.holy-grail-flex .nav, .holy-grail-flex .aside {
+    padding: 1rem;
+    background: #e9ecef;
+    width: 200px;
+}
+.holy-grail-flex .nav { order: 1; }
+.holy-grail-flex .aside { order: 3; }
+
+/* Responsive (Mobile-First) [cite: 184] */
+@media (max-width: 768px) {
+    .holy-grail-flex .main-content-flex {
+        flex-direction: column;
+    }
+    .holy-grail-flex .nav, .holy-grail-flex .aside {
+        width: 100%;
+        order: 0; /* Reset order */
+    }
+    .holy-grail-flex .main { order: 0; }
+}

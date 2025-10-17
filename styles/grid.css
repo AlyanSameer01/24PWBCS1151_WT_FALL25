@@ -1,0 +1,71 @@
+/* Implements Grid portion of Task 7 [cite: 185] & Task 9 [cite: 198] */
+
+/* Holy Grail with Grid */
+.holy-grail-grid {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+}
+.holy-grail-grid .header { grid-area: header; }
+.holy-grail-grid .main-content-grid {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+}
+.holy-grail-grid .nav { background: #e9ecef; padding: 1rem; }
+.holy-grail-grid .main { padding: 1rem; }
+.holy-grail-grid .aside { background: #e9ecef; padding: 1rem; }
+.holy-grail-grid .footer { grid-area: footer; }
+
+@media (max-width: 768px) {
+    .holy-grail-grid .main-content-grid {
+        grid-template-columns: 1fr; /* Stack everything */
+    }
+}
+
+/* Dashboard Layout  */
+.dashboard {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar main";
+}
+.dash-header { grid-area: header; background: #fff; border-bottom: 1px solid #ddd; padding: 0 1rem; }
+.dash-sidebar { grid-area: sidebar; background: var(--dark-color); color: white; }
+.dash-main { grid-area: main; background: var(--light-color); padding: 1.5rem; }
+
+/* Dashboard stat cards using Flexbox [cite: 199, 203] */
+.stat-cards {
+    display: flex;
+    gap: 1.5rem;
+}
+.stat-card {
+    flex: 1;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 1024px) {
+    .dashboard { /* Fixed sidebar collapses on tablet [cite: 200] */
+        grid-template-columns: 80px 1fr;
+    }
+}
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "main";
+    }
+    .dash-sidebar { display: none; } /* Hide sidebar on mobile */
+    .stat-cards { flex-direction: column; } /* Stack cards on mobile [cite: 203] */
+}

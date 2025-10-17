@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Exercises</title>
+    <link rel="stylesheet" href="../styles/base.css">
+    <style>
+        .grid-container {
+            display: grid; /* [cite: 94] */
+            grid-template-columns: repeat(3, 1fr); /* [cite: 95] */
+            gap: 1rem; /* [cite: 98] */
+            background: #ddd;
+            padding: 1rem;
+        }
+        .grid-item {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        .grid-item-span {
+            grid-column: span 2; /* [cite: 101] */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Grid Container</h1>
+        <div class="grid-container">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item grid-item-span">4 (Spans 2 columns)</div>
+            <div class="grid-item">5</div>
+        </div>
+    </div>
+</body>
+</html>

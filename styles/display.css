@@ -1,0 +1,23 @@
+/* Implements Exercises 1 & 2 [cite: 30, 35] */
+.display-section .box {
+    padding: 1rem;
+    margin: 0.5rem;
+    color: white;
+    border-radius: var(--border-radius);
+}
+.display-block { display: block; background: #c0392b; }
+.display-inline { display: inline; background: #2980b9; }
+.display-inline-block { display: inline-block; width: 150px; background: #27ae60; }
+.display-none { display: none; }
+.visibility-hidden { visibility: hidden; background: #f39c12; }
+
+/* Horizontal Nav [cite: 36] */
+.nav-horizontal li {
+    display: inline-block;
+    margin-right: 15px;
+}
+/* Vertical Nav [cite: 37] */
+.nav-vertical li {
+    display: block;
+    margin-bottom: 10px;
+}

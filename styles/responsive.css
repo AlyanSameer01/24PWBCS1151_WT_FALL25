@@ -1,0 +1,48 @@
+/* Implements Task 10  and Task 13  */
+
+/* Responsive Demo Page */
+.breakpoint-indicator::before {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background: #e74c3c;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    font-size: 14px;
+    content: 'Screen Size: Mobile';
+}
+@media (min-width: 768px) {
+    .breakpoint-indicator::before {
+        content: 'Screen Size: Tablet';
+        background: #e67e22;
+    }
+}
+@media (min-width: 1024px) {
+    .breakpoint-indicator::before {
+        content: 'Screen Size: Desktop';
+        background: #2ecc71;
+    }
+}
+
+/* Portfolio Layout */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+.project-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.project-card-content {
+    padding: 1rem;
+}

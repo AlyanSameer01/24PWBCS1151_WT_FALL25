@@ -1,0 +1,25 @@
+/* components.css — cards, buttons, and form components */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #0066cc;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #004c99;
+}

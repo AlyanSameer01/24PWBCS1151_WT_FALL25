@@ -1,0 +1,21 @@
+/* effects.css — transitions, transforms, hover demos */
+.box {
+  width: 150px;
+  height: 150px;
+  background: #3399ff;
+  margin: 1rem;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+  display: inline-block;
+}
+.box:hover {
+  transform: rotate(15deg) scale(1.1);
+  background: #003366;
+}
+.gradient-text {
+  font-size: 2rem;
+  background: linear-gradient(90deg, #0066cc, #ff6600);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
